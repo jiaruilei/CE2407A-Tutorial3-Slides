@@ -1,0 +1,330 @@
+{
+  "source": {
+    "filename": "Tutorial 3_Recorded.pptx",
+    "sha256": "f85db4a93bc5963cbfbaf47c6379cd1d279e368abdd959fa4f67a04d2d8305b7"
+  },
+  "panel_method": "Original PNG bytes preserved. Derived panels copy source pixels without resampling.",
+  "coordinate_system": "Source image pixels, left/top inclusive and right/bottom exclusive",
+  "originals": [
+    {
+      "file": "set2-q3.png",
+      "set": 2,
+      "question": 3,
+      "source_slide": 3,
+      "media_member": "ppt/media/image5.png",
+      "source_picture_name": "Picture 8",
+      "source_crop": {},
+      "dimensions_px": [
+        565,
+        677
+      ],
+      "sha256": "b10db43ca91ef6d454d006b8755270ae9c8134c10046713074eb67b43c4df730",
+      "description": "Standard normal distribution function table",
+      "split_note": "Split at source y=386 between z=1.8 and z=1.9. The right panel repeats the original header y=0..109. Crop x=56 removes the blank left margin while retaining all table text and baked guide marks. The untouched full image is retained."
+    },
+    {
+      "file": "set2-q4.png",
+      "set": 2,
+      "question": 4,
+      "source_slide": 8,
+      "media_member": "ppt/media/image15.png",
+      "source_picture_name": "Picture 6",
+      "source_crop": {},
+      "dimensions_px": [
+        488,
+        725
+      ],
+      "sha256": "a6ca6e5565da2419083420446136f0e184d71af8a65d738b42aba4fc4c9a603b",
+      "description": "Lognormal distribution parameters and cumulative distribution function",
+      "split_note": "Split immediately below the original horizontal divider at y=370. All source pixels are retained across the two panels."
+    },
+    {
+      "file": "set2-q5.png",
+      "set": 2,
+      "question": 5,
+      "source_slide": 13,
+      "media_member": "ppt/media/image25.png",
+      "source_picture_name": "Picture 2",
+      "source_crop": {},
+      "dimensions_px": [
+        476,
+        730
+      ],
+      "sha256": "7bcf3b9f1a8883c5e4e0b2d4d0b539a0d1a85fce337bdad8ea2e144fb1c4d714",
+      "description": "Poisson process assumptions and distribution derivation",
+      "split_note": "Split immediately below the original separator at y=368. All source pixels are retained across the two panels."
+    },
+    {
+      "file": "set2-q6.png",
+      "set": 2,
+      "question": 6,
+      "source_slide": 18,
+      "media_member": "ppt/media/image35.png",
+      "source_picture_name": "Picture 6",
+      "source_crop": {},
+      "dimensions_px": [
+        500,
+        712
+      ],
+      "sha256": "23d8a36b4155b1e018430d2e449b57a0002cd2c7a5416b2b26b12ab50759a23f",
+      "description": "Exponential distribution from Poisson recurrence times",
+      "split_note": "Split immediately below the original separator at y=378. All source pixels are retained across the two panels."
+    }
+  ],
+  "snapshots": [
+    {
+      "file": "set2-q3-left.png",
+      "set": 2,
+      "question": 3,
+      "slide_id": "notes-t2-q3",
+      "source_slide": 3,
+      "media_member": "ppt/media/image5.png",
+      "original_file": "set2-q3.png",
+      "source_components_px": [
+        [
+          56,
+          0,
+          565,
+          386
+        ]
+      ],
+      "dimensions_px": [
+        509,
+        386
+      ],
+      "dimensions_css": [
+        530,
+        401.925344
+      ],
+      "position_css": [
+        98,
+        132
+      ],
+      "alt": "Standard normal distribution function table, original header and rows z=0.0 through z=1.8. The table gives cumulative probabilities for column offsets 0.00 through 0.09. Original red and blue guide marks are retained.",
+      "sha256": "d77d6d4deb65b350fa871127494ca30798b62d286e49aa5b607ea3aba6914643"
+    },
+    {
+      "file": "set2-q3-right.png",
+      "set": 2,
+      "question": 3,
+      "slide_id": "notes-t2-q3",
+      "source_slide": 3,
+      "media_member": "ppt/media/image5.png",
+      "original_file": "set2-q3.png",
+      "source_components_px": [
+        [
+          56,
+          0,
+          565,
+          109
+        ],
+        [
+          56,
+          386,
+          565,
+          677
+        ]
+      ],
+      "dimensions_px": [
+        509,
+        400
+      ],
+      "dimensions_css": [
+        530,
+        416.502947
+      ],
+      "position_css": [
+        652,
+        132
+      ],
+      "alt": "Standard normal distribution function table, repeated original header and remaining rows z=1.9 through z=3.5, plus the original z=4.0 and z=5.0 entries. The table gives cumulative probabilities for column offsets 0.00 through 0.09.",
+      "sha256": "83b8afc2dfcf2f626a5b6b7dd7b58205da39fc0fcf8ee5d41b5616252241d349"
+    },
+    {
+      "file": "set2-q4-left.png",
+      "set": 2,
+      "question": 4,
+      "slide_id": "notes-t2-q4",
+      "source_slide": 8,
+      "media_member": "ppt/media/image15.png",
+      "original_file": "set2-q4.png",
+      "source_components_px": [
+        [
+          0,
+          0,
+          488,
+          370
+        ]
+      ],
+      "dimensions_px": [
+        488,
+        370
+      ],
+      "dimensions_css": [
+        530,
+        401.844262
+      ],
+      "position_css": [
+        98,
+        132
+      ],
+      "alt": "Lecture notes on the lognormal distribution: probability density, parameters lambda and zeta, relationship between mean, variance, coefficient of variation and median, and density curves for several zeta values.",
+      "sha256": "c6789b15f8d795676d36d11bc8c9a0b2731e7f83e0b6000aad852aefc39baf08"
+    },
+    {
+      "file": "set2-q4-right.png",
+      "set": 2,
+      "question": 4,
+      "slide_id": "notes-t2-q4",
+      "source_slide": 8,
+      "media_member": "ppt/media/image15.png",
+      "original_file": "set2-q4.png",
+      "source_components_px": [
+        [
+          0,
+          370,
+          488,
+          725
+        ]
+      ],
+      "dimensions_px": [
+        488,
+        355
+      ],
+      "dimensions_css": [
+        530,
+        385.553279
+      ],
+      "position_css": [
+        652,
+        132
+      ],
+      "alt": "Lecture notes deriving the lognormal cumulative distribution function through standard normal transformation S=(ln X-lambda)/zeta, with the equivalence between lognormal X and normally distributed ln X.",
+      "sha256": "c934aa31c60f80b9aa666164d33edf5ff0f0c94f711dd425e5b0b2ffad2a33e6"
+    },
+    {
+      "file": "set2-q5-left.png",
+      "set": 2,
+      "question": 5,
+      "slide_id": "notes-t2-q5",
+      "source_slide": 13,
+      "media_member": "ppt/media/image25.png",
+      "original_file": "set2-q5.png",
+      "source_components_px": [
+        [
+          0,
+          0,
+          476,
+          368
+        ]
+      ],
+      "dimensions_px": [
+        476,
+        368
+      ],
+      "dimensions_css": [
+        530,
+        409.747899
+      ],
+      "position_css": [
+        98,
+        132
+      ],
+      "alt": "Lecture notes on Poisson process assumptions: random occurrence in time or space, independence between intervals, rate nu, event probability nu times delta t in a short interval, and negligible probability of multiple events in an infinitesimal interval.",
+      "sha256": "ddd065bfdf0e700d45fa97cf3e4fce2a9a3138e6fb685c64b64147e183276de4"
+    },
+    {
+      "file": "set2-q5-right.png",
+      "set": 2,
+      "question": 5,
+      "slide_id": "notes-t2-q5",
+      "source_slide": 13,
+      "media_member": "ppt/media/image25.png",
+      "original_file": "set2-q5.png",
+      "source_components_px": [
+        [
+          0,
+          368,
+          476,
+          730
+        ]
+      ],
+      "dimensions_px": [
+        476,
+        362
+      ],
+      "dimensions_css": [
+        530,
+        403.067227
+      ],
+      "position_css": [
+        652,
+        132
+      ],
+      "alt": "Lecture notes deriving the Poisson distribution as a limit of binomial probabilities. The result is P(X=x)=(nu t)^x exp(-nu t)/x!, for x=0,1,2,..., with the same interpretation for distance in place of time.",
+      "sha256": "2ae56db2a2aa7050a0a1931e641077c7d29557cce1634959d177956762f68a5a"
+    },
+    {
+      "file": "set2-q6-left.png",
+      "set": 2,
+      "question": 6,
+      "slide_id": "notes-t2-q6",
+      "source_slide": 18,
+      "media_member": "ppt/media/image35.png",
+      "original_file": "set2-q6.png",
+      "source_components_px": [
+        [
+          0,
+          0,
+          500,
+          378
+        ]
+      ],
+      "dimensions_px": [
+        500,
+        378
+      ],
+      "dimensions_css": [
+        530,
+        400.68
+      ],
+      "position_css": [
+        98,
+        132
+      ],
+      "alt": "Lecture notes deriving the exponential distribution from the waiting time to the first event in a Poisson process. Zero occurrences during time t is equivalent to the first occurrence time T being greater than t.",
+      "sha256": "041bdf4f52e0fc851f645d107c58b9c2105c4d54e44b3d0a4395f9e4f175a233"
+    },
+    {
+      "file": "set2-q6-right.png",
+      "set": 2,
+      "question": 6,
+      "slide_id": "notes-t2-q6",
+      "source_slide": 18,
+      "media_member": "ppt/media/image35.png",
+      "original_file": "set2-q6.png",
+      "source_components_px": [
+        [
+          0,
+          378,
+          500,
+          712
+        ]
+      ],
+      "dimensions_px": [
+        500,
+        334
+      ],
+      "dimensions_css": [
+        530,
+        354.04
+      ],
+      "position_css": [
+        652,
+        132
+      ],
+      "alt": "Lecture notes on the exponential distribution: P(T>t)=exp(-nu t), cumulative distribution F_T(t)=1-exp(-nu t), density f_T(t)=nu exp(-nu t) for t at least zero, and mean return period E(T)=1/nu.",
+      "sha256": "ae2981337e46a7258b6e3e753d971906af6b62ba343271d0365ea981ff632be0"
+    }
+  ]
+}

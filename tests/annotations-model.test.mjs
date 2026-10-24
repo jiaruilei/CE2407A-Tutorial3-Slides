@@ -103,6 +103,37 @@ test('question statements, Q4 continuation and whiteboard keep independent edita
   for (const key of interactiveKeys) assert.deepEqual(restored.get(key), existing.slides[key]);
 });
 
+test('lecture notes persist independently and preserve ink on every existing slide and layout', () => {
+  const existingKeys = ['slide-1', 'slide-2', 'slide-3', 'slide-4', 'slide-5',
+    'slide-2:expanded', 'slide-3:expanded', 'slide-4:expanded', 'slide-5:expanded',
+    'question-t2-q3', 'question-t2-q4', 'question-t2-q4-continued',
+    'question-t2-q5', 'question-t2-q6', 'whiteboard'];
+  const existing = { version: 1, slides: Object.fromEntries(existingKeys.map(key => [key, [stroke(`existing-${key}`)]])) };
+  const history = new InkHistory();
+  assert.equal(history.load(JSON.stringify(existing)), true);
+  const notesKeys = ['notes-t2-q3', 'notes-t2-q4', 'notes-t2-q5', 'notes-t2-q6'];
+  for (const key of notesKeys) {
+    assert.equal(history.add(key, stroke(`new-${key}`)), true);
+    assert.equal(history.clear(key), true);
+    assert.equal(history.get(key).length, 0);
+    assert.equal(history.undo(key), true);
+    assert.equal(history.get(key)[0].id, `new-${key}`);
+    assert.equal(history.redo(key), true);
+    assert.equal(history.get(key).length, 0);
+    assert.equal(history.undo(key), true);
+  }
+  for (const key of existingKeys) assert.deepEqual(history.get(key), existing.slides[key]);
+  const saved = history.serialize(), restored = new InkHistory();
+  assert.equal(restored.load(JSON.stringify(saved)), true);
+  assert.deepEqual(restored.serialize(), saved);
+  for (const key of notesKeys) assert.equal(restored.get(key)[0].id, `new-${key}`);
+  assert.equal(restored.clear('notes-t2-q4'), true);
+  for (const key of notesKeys.filter(key => key !== 'notes-t2-q4')) {
+    assert.equal(restored.get(key)[0].id, `new-${key}`);
+  }
+  for (const key of existingKeys) assert.deepEqual(restored.get(key), existing.slides[key]);
+});
+
 test('invalid loads are atomic and cannot inject keys, bad coordinates or extra stroke properties', () => {
   const history = new InkHistory();
   history.add('slide-1', stroke('existing'));
@@ -118,6 +149,9 @@ test('invalid loads are atomic and cannot inject keys, bad coordinates or extra 
     { version: 1, slides: { 'question-t3-q3': [] } }, { version: 1, slides: { 'question-t2-q03': [] } },
     { version: 1, slides: { 'question-t2-q3-continued': [] } }, { version: 1, slides: { 'question-t2-q5-continued': [] } },
     { version: 1, slides: { 'question-t2-q6-continued': [] } }, { version: 1, slides: { 'question-t2-q4-continued:expanded': [] } },
+    ...['notes-t2-q2', 'notes-t2-q7', 'notes-t1-q3', 'notes-t3-q3', 'notes-t2-q03',
+      'notes-t2-q4-continued', 'notes-t2-q3:expanded', 'notes-t2-q4:expanded',
+      'notes-t2-q5:expanded', 'notes-t2-q6:expanded'].map(key => ({ version: 1, slides: { [key]: [] } })),
     JSON.parse('{"version":1,"slides":{"__proto__":[]}}'),
     { version: 1, slides: { 'slide-2': [stroke('valid')], 'slide-3': [stroke('invalid', [{ x: Infinity, y: 1 }])] } },
     { version: 1, slides: { 'slide-2': [stroke('a', [{ x: 1e7 + 1, y: 0 }])] } },

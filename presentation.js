@@ -1,5 +1,5 @@
 'use strict';
-import { installAnnotations } from './annotations.js?v=tutorial3-1';
+import { installAnnotations } from './annotations.js?v=tutorial3-notes-1';
 import { createFullscreenController } from './fullscreen.js';
 import { installQuestionViewer } from './question-viewer.js';
 const deck = new Reveal({
@@ -107,9 +107,10 @@ function sync() {
   const question = slide.dataset.question;
   const questionLabel = question ? `T${slide.dataset.tutorial} Q${question}` : '';
   const isStatement = slide.classList.contains('question-statement');
+  const isNotes = slide.classList.contains('lecture-notes');
   const isWhiteboard = slide.id === 'whiteboard';
   document.getElementById('current-question').textContent = question
-    ? `${questionLabel} · ${isStatement ? 'Question' : 'Explore'}` : isWhiteboard ? 'Whiteboard' : 'Questions';
+    ? `${questionLabel} · ${isNotes ? 'Notes' : isStatement ? 'Question' : 'Explore'}` : isWhiteboard ? 'Whiteboard' : 'Questions';
   viewQuestion.hidden = !isStatement;
   openExercise.hidden = isWhiteboard;
   openExercise.href = slide.dataset.exerciseUrl || 'https://jiaruilei.github.io/CE2407A_Tutorial2/';

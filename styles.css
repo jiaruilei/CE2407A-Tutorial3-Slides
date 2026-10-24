@@ -12,8 +12,8 @@ body { background: #151e2c; color: #fff; font-family: Arial, sans-serif; }
 .study-controls [hidden] { display: none; }
 .study-controls #open-exercise { background: var(--orange); color: var(--navy); border-color: var(--orange); font-weight: 600; }
 .question-navigation { position: relative; }
-.question-menu { position: absolute; top: calc(100% + 8px); left: 0; width: 380px; max-width: calc(100vw - 24px); max-height: calc(100dvh - var(--study-controls-height) - 16px); overflow: auto; padding: 8px; border: 1px solid #c2cfdd; border-radius: 8px; background: #fff; color: var(--navy); box-shadow: 0 12px 32px #0005; }
-.question-menu-row { display: grid; grid-template-columns: 1fr 88px 76px; align-items: center; gap: 6px; padding: 6px 0; border-top: 1px solid #e3e9f0; }
+.question-menu { position: absolute; top: calc(100% + 8px); left: 0; width: 450px; max-width: calc(100vw - 24px); max-height: calc(100dvh - var(--study-controls-height) - 16px); overflow: auto; padding: 8px; border: 1px solid #c2cfdd; border-radius: 8px; background: #fff; color: var(--navy); box-shadow: 0 12px 32px #0005; }
+.question-menu-row { display: grid; grid-template-columns: minmax(0, 1fr) 88px 62px 76px; align-items: center; gap: 6px; padding: 6px 0; border-top: 1px solid #e3e9f0; }
 .question-menu-row > span { padding-left: 6px; font-weight: 700; }
 .question-menu-row small { display: block; margin-top: 4px; color: #526579; font-size: 12px; font-weight: 400; }
 .study-controls .question-menu a { color: var(--navy); background: #f4f7fb; border-color: #d2dce7; padding: 0 8px; }
@@ -71,6 +71,7 @@ body { background: #151e2c; color: #fff; font-family: Arial, sans-serif; }
   .study-controls button, .study-controls a { gap: 4px; padding: 0 7px; }
   .study-actions { gap: 4px; }
   .question-menu { max-width: calc(100vw - 12px); }
+  .question-menu-row { grid-template-columns: minmax(0, 1fr) 70px 50px 62px; gap: 4px; }
 }
 /* A browser-contained alternative when native full screen is unavailable. */
 body.is-expanded-view { background: #151e2c; }
