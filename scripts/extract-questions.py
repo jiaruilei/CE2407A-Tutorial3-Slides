@@ -175,40 +175,22 @@ CROPS = [
         "alt": "(a) What is the mean and variance of the number of rain storms in a year for the city? (b) What is the probability of flooding during a rainstorm? (c) What is the probability of flooding in a year?"
     },
     {
-        "file": "set2-q5.png",
+        "file": "set2-q8.png",
         "set": 2,
-        "question": 5,
-        "page": 3,
-        "slide_id": "question-t2-q5",
-        "bbox_pt": [
-            92,
-            354,
-            521,
-            599
-        ],
-        "position_css": [
-            98,
-            132
-        ],
-        "alt": "Tutorial Set 2, Question 5. The service stations along a highway are located according to a Poisson process with an average of 1 service station in 10 miles. Because of a gas shortage, there is a probability of 0.2 that a service station would not have gasoline available. Assume that the availabilities of gasoline at different service stations are statistically independent. (a) What is the probability that there is at most 1 service station in the next 15 miles of highway? (b) What is the probability that none of the next 3 stations have gasoline for sale? (c) A driver on this highway notices that the fuel gauge in his car reads empty; from experience he knows that he can go another 15 miles. What is the probability that he will be stranded on the highway without gasoline? Hint: the Taylor series expansion for e to the x may be useful: e^x = [1 + x/1! + x^2/2! + x^3/3! + ...]."
-    },
-    {
-        "file": "set2-q6.png",
-        "set": 2,
-        "question": 6,
-        "page": 4,
-        "slide_id": "question-t2-q6",
+        "question": 8,
+        "page": 5,
+        "slide_id": "question-t2-q8",
         "bbox_pt": [
             92,
             67,
             521,
-            259
+            272
         ],
         "position_css": [
             98,
             132
         ],
-        "alt": "Tutorial Set 2, Question 6. The cost for the facilities to release and refill water for a navigation lock in a canal increases with decreasing time required for each cycle of operation. For purposes of design, it has been observed that the time of arrival of boats follows an exponential distribution with a mean inter-arrival time of 0.5 hr. Assume that the navigation lock is to be designed so that 80% of the incoming traffic can pass through the lock without waiting. (a) What should be the design time of each cycle of operation? (b) Suppose that one boat leaves town A every 6 hr, and has to go through the lock to reach its destination. In a 24-hr day, (i) What is the probability that none of the boats have to wait at the lock? (ii) What is the probability that at least 2 of the boats have to wait?"
+        "alt": "Tutorial Set 2, Question 8. The cantilever beam shown below is subjected to a random concentrated load P and a random distributed load W. Assume P is normally distributed with mean 5 and standard deviation 1, in kips, and W is normally distributed with mean 1 and standard deviation 0.2, in kips per foot. (a) Determine the mean and variance of the applied bending moment, M = 50W + 10P. Assume that the correlation between W and P is 0.5. (b) The resisting moment of the beam R is Gaussian, with mean 200 and standard deviation 50, in foot-kips. Determine the probability of failure of the beam, P(R < M), assuming that R and M are independent. Diagram: a 10-foot cantilever fixed at the left end, carrying a downward uniformly distributed load W and a downward concentrated load P at the right end, with bending moment M_a at the fixed support."
     }
 ]
 

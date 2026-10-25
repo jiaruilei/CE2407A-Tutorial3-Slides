@@ -1,5 +1,5 @@
 'use strict';
-import { installAnnotations } from './annotations.js?v=tutorial3-notes-1';
+import { installAnnotations } from './annotations.js?v=tutorial3-q8-1';
 import { createFullscreenController } from './fullscreen.js';
 import { installQuestionViewer } from './question-viewer.js';
 const deck = new Reveal({

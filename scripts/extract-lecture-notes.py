@@ -15,6 +15,7 @@ import json
 from pathlib import Path
 import posixpath
 from zipfile import ZipFile
+from contextlib import ExitStack
 
 from lxml import etree as ET
 from PIL import Image
@@ -62,7 +63,8 @@ SPECS = [
                 "alt": "Standard normal distribution function table, repeated original header and remaining rows z=1.9 through z=3.5, plus the original z=4.0 and z=5.0 entries. The table gives cumulative probabilities for column offsets 0.00 through 0.09."
             }
         ],
-        "split_note": "Split at source y=386 between z=1.8 and z=1.9. The right panel repeats the original header y=0..109. Crop x=56 removes the blank left margin while retaining all table text and baked guide marks. The untouched full image is retained."
+        "split_note": "Split at source y=386 between z=1.8 and z=1.9. The right panel repeats the original header y=0..109. Crop x=56 removes the blank left margin while retaining all table text and baked guide marks. The untouched full image is retained.",
+        "source_id": "tutorial3"
     },
     {
         "question": 4,
@@ -99,54 +101,19 @@ SPECS = [
                 "alt": "Lecture notes deriving the lognormal cumulative distribution function through standard normal transformation S=(ln X-lambda)/zeta, with the equivalence between lognormal X and normally distributed ln X."
             }
         ],
-        "split_note": "Split immediately below the original horizontal divider at y=370. All source pixels are retained across the two panels."
+        "split_note": "Split immediately below the original horizontal divider at y=370. All source pixels are retained across the two panels.",
+        "source_id": "tutorial3"
     },
     {
-        "question": 5,
-        "slide_number": 13,
-        "media_member": "ppt/media/image25.png",
-        "source_dimensions_px": [
-            476,
-            730
-        ],
-        "description": "Poisson process assumptions and distribution derivation",
-        "panels": [
-            {
-                "side": "left",
-                "components": [
-                    [
-                        0,
-                        0,
-                        476,
-                        368
-                    ]
-                ],
-                "alt": "Lecture notes on Poisson process assumptions: random occurrence in time or space, independence between intervals, rate nu, event probability nu times delta t in a short interval, and negligible probability of multiple events in an infinitesimal interval."
-            },
-            {
-                "side": "right",
-                "components": [
-                    [
-                        0,
-                        368,
-                        476,
-                        730
-                    ]
-                ],
-                "alt": "Lecture notes deriving the Poisson distribution as a limit of binomial probabilities. The result is P(X=x)=(nu t)^x exp(-nu t)/x!, for x=0,1,2,..., with the same interpretation for distance in place of time."
-            }
-        ],
-        "split_note": "Split immediately below the original separator at y=368. All source pixels are retained across the two panels."
-    },
-    {
-        "question": 6,
-        "slide_number": 18,
-        "media_member": "ppt/media/image35.png",
+        "question": 8,
+        "source_id": "tutorial4",
+        "slide_number": 6,
+        "media_member": "ppt/media/image5.png",
         "source_dimensions_px": [
             500,
-            712
+            728
         ],
-        "description": "Exponential distribution from Poisson recurrence times",
+        "description": "Sum or difference of correlated normal random variables",
         "panels": [
             {
                 "side": "left",
@@ -155,25 +122,25 @@ SPECS = [
                         0,
                         0,
                         500,
-                        378
+                        373
                     ]
                 ],
-                "alt": "Lecture notes deriving the exponential distribution from the waiting time to the first event in a Poisson process. Zero occurrences during time t is equivalent to the first occurrence time T being greater than t."
+                "alt": "Lecture notes, section 4.3 Function of Multiple Random Variables and section 4.3.1 Sum or Difference of Normal Random Variables. For normal variables X1 and X2 with correlation rho, a linear combination Y=a1X1+a2X2 is normal with mean mu_Y and standard deviation sigma_Y."
             },
             {
                 "side": "right",
                 "components": [
                     [
                         0,
-                        378,
+                        373,
                         500,
-                        712
+                        728
                     ]
                 ],
-                "alt": "Lecture notes on the exponential distribution: P(T>t)=exp(-nu t), cumulative distribution F_T(t)=1-exp(-nu t), density f_T(t)=nu exp(-nu t) for t at least zero, and mean return period E(T)=1/nu."
+                "alt": "Lecture notes deriving the mean and variance of a linear combination of correlated normal variables: E(Y)=a1 mu_X1+a2 mu_X2; Var(Y)=a1 squared sigma_X1 squared+a2 squared sigma_X2 squared+2a1a2 rho sigma_X1 sigma_X2. The notes also give the covariance and correlation definitions and the general double-sum variance expression."
             }
         ],
-        "split_note": "Split immediately below the original separator at y=378. All source pixels are retained across the two panels."
+        "split_note": "Split immediately below the original separator at y=373. Every source pixel is retained across the two panels. The standard-normal table on source slide 9 is byte-identical to the original table already retained for Q3."
     }
 ]
 NS = {"a": "http://schemas.openxmlformats.org/drawingml/2006/main",
@@ -182,20 +149,23 @@ NS = {"a": "http://schemas.openxmlformats.org/drawingml/2006/main",
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--source", required=True, type=Path)
+    parser.add_argument("--source", required=True, type=Path, help="Tutorial 3_Recorded.pptx, for Q3 and Q4")
+    parser.add_argument("--q8-source", type=Path, help="Tutorial 4_2025.pptx, defaults to the same directory as --source")
     parser.add_argument("--output-dir", default=REPO / "assets" / "lecture-notes", type=Path)
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    source_paths = {"tutorial3": args.source, "tutorial4": args.q8_source or args.source.with_name("Tutorial 4_2025.pptx")}
     manifest = {
-        "source": {"filename": args.source.name,
-                   "sha256": hashlib.sha256(args.source.read_bytes()).hexdigest()},
+        "sources": [{"id": source_id, "filename": path.name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()} for source_id, path in source_paths.items()],
         "panel_method": "Original PNG bytes preserved. Derived panels copy source pixels without resampling.",
         "coordinate_system": "Source image pixels, left/top inclusive and right/bottom exclusive",
         "originals": [],
         "snapshots": [],
     }
-    with ZipFile(args.source) as archive:
+    with ExitStack() as stack:
+        archives = {source_id: stack.enter_context(ZipFile(path)) for source_id, path in source_paths.items()}
         for spec in SPECS:
+            archive = archives[spec["source_id"]]
             number = spec["slide_number"]
             slide = ET.fromstring(archive.read(f"ppt/slides/slide{number}.xml"))
             rels = ET.fromstring(archive.read(f"ppt/slides/_rels/slide{number}.xml.rels"))
@@ -222,7 +192,7 @@ def main():
                     raise ValueError(f"Unexpected source dimensions for {original_file}")
                 manifest["originals"].append({
                     "file": original_file, "set": 2, "question": spec["question"],
-                    "source_slide": number, "media_member": spec["media_member"],
+                    "source_id": spec["source_id"], "source_slide": number, "media_member": spec["media_member"],
                     "source_picture_name": matches[0].find("p:nvPicPr/p:cNvPr", NS).get("name"),
                     "source_crop": crop, "dimensions_px": list(original.size),
                     "sha256": original_sha, "description": spec["description"],
@@ -247,7 +217,7 @@ def main():
                         raise ValueError(f"Panel exceeds designated slide area: {filename}")
                     manifest["snapshots"].append({
                         "file": filename, "set": 2, "question": spec["question"],
-                        "slide_id": f"notes-t2-q{spec['question']}", "source_slide": number,
+                        "slide_id": f"notes-t2-q{spec['question']}", "source_id": spec["source_id"], "source_slide": number,
                         "media_member": spec["media_member"], "original_file": original_file,
                         "source_components_px": panel["components"],
                         "dimensions_px": [width, height],

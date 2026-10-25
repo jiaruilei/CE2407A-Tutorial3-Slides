@@ -134,6 +134,37 @@ test('lecture notes persist independently and preserve ink on every existing sli
   for (const key of existingKeys) assert.deepEqual(restored.get(key), existing.slides[key]);
 });
 
+test('Q8 views keep independent ink while saved Q5 and Q6 ink remains intact', () => {
+  const priorKeys = ['slide-1', 'slide-2', 'slide-3', 'slide-4', 'slide-5',
+    'slide-2:expanded', 'slide-3:expanded', 'slide-4:expanded', 'slide-5:expanded',
+    'question-t2-q3', 'question-t2-q4', 'question-t2-q4-continued',
+    'question-t2-q5', 'question-t2-q6', 'notes-t2-q3', 'notes-t2-q4',
+    'notes-t2-q5', 'notes-t2-q6', 'whiteboard'];
+  const prior = { version: 1, slides: Object.fromEntries(priorKeys.map(key => [key, [stroke(`prior-${key}`)]])) };
+  const history = new InkHistory();
+  assert.equal(history.load(JSON.stringify(prior)), true);
+  const q8Keys = ['question-t2-q8', 'notes-t2-q8', 'explore-t2-q8', 'explore-t2-q8:expanded'];
+  for (const key of q8Keys) {
+    assert.equal(history.get(key).length, 0);
+    assert.equal(history.add(key, stroke(`new-${key}`)), true);
+  }
+  for (const key of q8Keys) {
+    assert.equal(history.clear(key), true);
+    assert.equal(history.get(key).length, 0);
+    for (const otherKey of q8Keys.filter(otherKey => otherKey !== key)) {
+      assert.equal(history.get(otherKey)[0].id, `new-${otherKey}`);
+    }
+    assert.equal(history.undo(key), true);
+    assert.equal(history.get(key)[0].id, `new-${key}`);
+  }
+  for (const key of priorKeys) assert.deepEqual(history.get(key), prior.slides[key]);
+  const saved = history.serialize(), restored = new InkHistory();
+  assert.equal(restored.load(JSON.stringify(saved)), true);
+  assert.deepEqual(restored.serialize(), saved);
+  for (const key of q8Keys) assert.equal(restored.get(key)[0].id, `new-${key}`);
+  for (const key of priorKeys) assert.deepEqual(restored.get(key), prior.slides[key]);
+});
+
 test('invalid loads are atomic and cannot inject keys, bad coordinates or extra stroke properties', () => {
   const history = new InkHistory();
   history.add('slide-1', stroke('existing'));
@@ -152,6 +183,9 @@ test('invalid loads are atomic and cannot inject keys, bad coordinates or extra 
     ...['notes-t2-q2', 'notes-t2-q7', 'notes-t1-q3', 'notes-t3-q3', 'notes-t2-q03',
       'notes-t2-q4-continued', 'notes-t2-q3:expanded', 'notes-t2-q4:expanded',
       'notes-t2-q5:expanded', 'notes-t2-q6:expanded'].map(key => ({ version: 1, slides: { [key]: [] } })),
+    ...['question-t2-q8:expanded', 'notes-t2-q8:expanded', 'question-t2-q8-continued',
+      'notes-t2-q8-continued', 'question-t2-q08', 'notes-t2-q08', 'explore-t2-q08',
+      'explore-t2-q7', 'explore-t1-q8', 'explore-t2-q8:other'].map(key => ({ version: 1, slides: { [key]: [] } })),
     JSON.parse('{"version":1,"slides":{"__proto__":[]}}'),
     { version: 1, slides: { 'slide-2': [stroke('valid')], 'slide-3': [stroke('invalid', [{ x: Infinity, y: 1 }])] } },
     { version: 1, slides: { 'slide-2': [stroke('a', [{ x: 1e7 + 1, y: 0 }])] } },

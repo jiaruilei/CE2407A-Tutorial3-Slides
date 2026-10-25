@@ -1,6 +1,6 @@
 # CE2407A Tutorial 3
 
-Fifteen web slides for Tutorial 3, Week 11, covering Tutorial Questions Set 2, Q3-Q6.
+Twelve web slides for Tutorial 3, Week 11, covering Tutorial Questions Set 2, Q3, Q4 and Q8.
 
 1. Tutorial 3
 2. Q3: Original question statement
@@ -10,19 +10,16 @@ Fifteen web slides for Tutorial 3, Week 11, covering Tutorial Questions Set 2, Q
 6. Q4: Original graphs and question parts (continued)
 7. Q4: Lecture notes (lognormal distribution)
 8. Q4: Annual flood risk
-9. Q5: Original question statement
-10. Q5: Lecture notes (Poisson process)
-11. Q5: Stations and fuel range
-12. Q6: Original question statement
-13. Q6: Lecture notes (exponential distribution)
-14. Q6: Lock cycle and waiting
-15. Blank whiteboard for handwritten equations
+9. Q8: Original question statement and cantilever diagram
+10. Q8: Lecture notes (sums of correlated normal variables)
+11. Q8: Beam reliability
+12. Blank whiteboard for handwritten equations
 
 ## Present
 
 Open [the presentation](https://jiaruilei.github.io/CE2407A-Tutorial3-Slides/). Use the arrow keys or bottom buttons to change slides. Press O for overview and F for full screen. When a question has keyboard focus, use the bottom buttons to change slides.
 
-The top question menu jumps directly to **Question**, **Notes** or **Explore** for Set 2 Q3, Q4, Q5 and Q6. Its active item follows arrow navigation and browser history. **Open exercise** opens the current question in the responsive tutorial in a new tab, with normal-sized controls on phones. These study controls stay outside the scaled slides.
+The top question menu jumps directly to **Question**, **Notes** or **Explore** for Set 2 Q3, Q4 and Q8. Its active item follows arrow navigation and browser history. **Open exercise** opens the current question in the responsive tutorial in a new tab, with normal-sized controls on phones. These study controls stay outside the scaled slides.
 
 Phones retain the same slide layout and navigation. Rotate to landscape for larger text, or use **View larger** on a question statement or lecture-notes page to open its image viewer. Drag or scroll to pan, use the zoom buttons or select **Fit width**, then **Close** to return. The viewer preserves all crop proportions and leaves slide annotations intact. Reveal's automatic mobile scroll view is disabled because it reparents slides and breaks this deck's fixed layout and annotation surfaces.
 
@@ -30,11 +27,11 @@ Full screen uses the browser's standard or WebKit fullscreen API when available.
 
 Interactive slides use a larger panel with a compact heading. **Enlarge exercise** fills the slide, and **Back to slide** restores its layout. **More → Reset exercise** reloads only that exercise and clears its answers and chat. Leaving a slide preserves its calculations and chat.
 
-The live exercises need an internet connection. All four embed [CE2407A_Tutorial2](https://jiaruilei.github.io/CE2407A_Tutorial2/), using `question=q3`, `question=q4`, `question=q5` or `question=q6` and `embed=1`. The existing app provides calculations, MathJax and AI coaching. No API keys belong in this repository.
+The live exercises need an internet connection. All three embed [CE2407A_Tutorial2](https://jiaruilei.github.io/CE2407A_Tutorial2/), using `question=q3`, `question=q4` or `question=q8` and `embed=1`. The existing app provides calculations, MathJax and AI coaching. No API keys belong in this repository.
 
 ## Annotate
 
-The final slide is a blank whiteboard. Reach it with the next-slide button after T2 Q6, or choose **Whiteboard** from the top menu. Select **Ink** to write equations. It supports the same pen, highlighter, eraser, undo/redo and automatic saving as the other slides.
+The final slide is a blank whiteboard. Reach it with the next-slide button after T2 Q8, or choose **Whiteboard** from the top menu. Select **Ink** to write equations. It supports the same pen, highlighter, eraser, undo/redo and automatic saving as the other slides.
 
 Select **Ink** in the bottom controls to open the annotation toolbar. Use Pen or Highlighter with a classroom pen, mouse or touch input. Choose a color and thickness. Eraser removes a whole stroke. Undo, Redo and Clear ink apply to the current slide view. Clearing is undoable.
 
@@ -50,21 +47,21 @@ Run `npm test` with Node.js to check annotation history, storage validation, coo
 
 The 1280 × 720 layout, navy and orange palette, Arial type, title positions, question snapshot scale, embedded panels and controls match [CE2407A-Tutorial1-Slides](https://github.com/jiaruilei/CE2407A-Tutorial1-Slides). The question, cover and exercise layouts retain their original styling. The question menu also includes Notes links. The cover QR code links to this deck and includes a four-module quiet zone. Reveal.js is bundled with its license in `LICENSE-reveal.txt`.
 
-Question statements and diagrams are cropped from the supplied `CE2407A Tutorial Questions Set 2.pdf` (pages 2, 3, 4, Q3-Q6). Each crop is rendered at 288 dpi and displayed at 2 CSS pixels per PDF point, matching Tutorial 1. Titles stay at x=97.92, y=32, with 52px Arial type. Question text starts at x=98, y=132. Cropped parts retain their original scale when rearranged to fit a slide.
+Question statements and diagrams are cropped from the supplied `CE2407A Tutorial Questions Set 2.pdf` (pages 2, 3 and 5, Q3, Q4 and Q8). Each crop is rendered at 288 dpi and displayed at 2 CSS pixels per PDF point, matching Tutorial 1. Titles stay at x=97.92, y=32, with 52px Arial type. Question text starts at x=98, y=132. Cropped parts retain their original scale when rearranged to fit a slide.
 
 Q4 uses a continuation slide to preserve the original text size and the diagrams' left/right arrangement.
 
 `assets/questions/manifest.json` records source PDF checksums, page numbers, crop bounds, display dimensions and positions. To rebuild the snapshots, run `python scripts/extract-questions.py --help` for the required PDF path. The original PDF is not included in this repository.
 
-The statement IDs are `question-t2-q3`, `question-t2-q4`, `question-t2-q4-continued`, `question-t2-q5` and `question-t2-q6`. Cover and explore IDs are `slide-1` through `slide-5`; the final blank slide is `whiteboard`. Keep these IDs and the ink namespace stable when editing content.
+The statement IDs are `question-t2-q3`, `question-t2-q4`, `question-t2-q4-continued` and `question-t2-q8`. Cover and Q3/Q4 explore IDs remain `slide-1`, `slide-2` and `slide-3`. Q8 uses `explore-t2-q8`; the final blank slide is `whiteboard`. Keep these IDs and the ink namespace stable when editing content.
 
 ## Lecture-note snapshots
 
-The four lecture-note snapshots come from slides 3, 8, 13 and 18 of the supplied `Tutorial 3_Recorded.pptx`. The original PNG images are extracted without re-encoding. The lognormal, Poisson and exponential snapshots each contain two stacked panels, shown side by side on their notes page. The normal table is split between row ranges, with its original header repeated above the second range. All content and annotations baked into the source images are retained.
+Q3 and Q4 notes come from slides 3 and 8 of `Tutorial 3_Recorded.pptx`. Q8 notes come from slide 6 of `Tutorial 4_2025.pptx`, covering sums or differences of correlated normal random variables. The original PNG images are extracted without re-encoding. Stacked lecture panels are shown side by side. The normal table is split between row ranges, with its original header repeated above the second range. All content and annotations baked into the source images are retained. The Q8 normal table in last year's deck is identical to the table already available under Q3 Notes.
 
-`assets/lecture-notes/manifest.json` records the PowerPoint checksum, original media members, panel bounds and displayed positions. Run `python scripts/extract-lecture-notes.py --help` to rebuild these assets from the supplied PowerPoint. The PowerPoint itself is not included in the repository.
+`assets/lecture-notes/manifest.json` records PowerPoint checksums, original media members, panel bounds and displayed positions. Run `python scripts/extract-lecture-notes.py --help` to rebuild these assets from the supplied PowerPoints. The PowerPoints are not included in this repository.
 
-The notes IDs are `notes-t2-q3` through `notes-t2-q6`. They share the existing ink tools and image viewer, with separate saved ink per page. Existing slide IDs and the storage namespace are unchanged.
+The notes IDs are `notes-t2-q3`, `notes-t2-q4` and `notes-t2-q8`. They share the existing ink tools and image viewer, with separate saved ink per page. Q5 and Q6 have been removed from the deck, menu and current assets. Their retired annotation keys remain accepted when reading saved ink, so an earlier browser session's data does not invalidate the remaining pages. Q8 has new keys and does not reuse retired ink. The storage namespace is unchanged.
 
 ## Local preview
 

@@ -1,5 +1,6 @@
 // Include the source tutorial in statement keys so question numbers stay unambiguous.
-const SLIDE_KEY = /^(?:slide-[1-5](?::expanded)?|question-t2-q[3-6]|question-t2-q4-continued|notes-t2-q[3-6]|whiteboard)$/;
+// Retired Q5/Q6 keys remain valid so loading saved ink preserves the whole document.
+const SLIDE_KEY = /^(?:slide-[1-5](?::expanded)?|question-t2-q[3-6]|question-t2-q4-continued|notes-t2-q[3-6]|question-t2-q8|notes-t2-q8|explore-t2-q8(?::expanded)?|whiteboard)$/;
 const MAX_STROKES = 5000;
 const MAX_POINTS = 200000;
 const MAX_COORDINATE = 1e7;

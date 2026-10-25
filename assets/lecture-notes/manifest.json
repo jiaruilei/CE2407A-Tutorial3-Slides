@@ -1,8 +1,16 @@
 {
-  "source": {
-    "filename": "Tutorial 3_Recorded.pptx",
-    "sha256": "f85db4a93bc5963cbfbaf47c6379cd1d279e368abdd959fa4f67a04d2d8305b7"
-  },
+  "sources": [
+    {
+      "id": "tutorial3",
+      "filename": "Tutorial 3_Recorded.pptx",
+      "sha256": "f85db4a93bc5963cbfbaf47c6379cd1d279e368abdd959fa4f67a04d2d8305b7"
+    },
+    {
+      "id": "tutorial4",
+      "filename": "Tutorial 4_2025.pptx",
+      "sha256": "d0c0aeb2b45c1f9d11e055ae951504ca6a617014c421f59e38eee7c28408a9f1"
+    }
+  ],
   "panel_method": "Original PNG bytes preserved. Derived panels copy source pixels without resampling.",
   "coordinate_system": "Source image pixels, left/top inclusive and right/bottom exclusive",
   "originals": [
@@ -10,6 +18,7 @@
       "file": "set2-q3.png",
       "set": 2,
       "question": 3,
+      "source_id": "tutorial3",
       "source_slide": 3,
       "media_member": "ppt/media/image5.png",
       "source_picture_name": "Picture 8",
@@ -26,6 +35,7 @@
       "file": "set2-q4.png",
       "set": 2,
       "question": 4,
+      "source_id": "tutorial3",
       "source_slide": 8,
       "media_member": "ppt/media/image15.png",
       "source_picture_name": "Picture 6",
@@ -39,36 +49,21 @@
       "split_note": "Split immediately below the original horizontal divider at y=370. All source pixels are retained across the two panels."
     },
     {
-      "file": "set2-q5.png",
+      "file": "set2-q8.png",
       "set": 2,
-      "question": 5,
-      "source_slide": 13,
-      "media_member": "ppt/media/image25.png",
-      "source_picture_name": "Picture 2",
-      "source_crop": {},
-      "dimensions_px": [
-        476,
-        730
-      ],
-      "sha256": "7bcf3b9f1a8883c5e4e0b2d4d0b539a0d1a85fce337bdad8ea2e144fb1c4d714",
-      "description": "Poisson process assumptions and distribution derivation",
-      "split_note": "Split immediately below the original separator at y=368. All source pixels are retained across the two panels."
-    },
-    {
-      "file": "set2-q6.png",
-      "set": 2,
-      "question": 6,
-      "source_slide": 18,
-      "media_member": "ppt/media/image35.png",
+      "question": 8,
+      "source_id": "tutorial4",
+      "source_slide": 6,
+      "media_member": "ppt/media/image5.png",
       "source_picture_name": "Picture 6",
       "source_crop": {},
       "dimensions_px": [
         500,
-        712
+        728
       ],
-      "sha256": "23d8a36b4155b1e018430d2e449b57a0002cd2c7a5416b2b26b12ab50759a23f",
-      "description": "Exponential distribution from Poisson recurrence times",
-      "split_note": "Split immediately below the original separator at y=378. All source pixels are retained across the two panels."
+      "sha256": "f3f3971dd9e896072e08a95bcf62b49ee2594330164f41c7df183ffd405fdab5",
+      "description": "Sum or difference of correlated normal random variables",
+      "split_note": "Split immediately below the original separator at y=373. Every source pixel is retained across the two panels. The standard-normal table on source slide 9 is byte-identical to the original table already retained for Q3."
     }
   ],
   "snapshots": [
@@ -77,6 +72,7 @@
       "set": 2,
       "question": 3,
       "slide_id": "notes-t2-q3",
+      "source_id": "tutorial3",
       "source_slide": 3,
       "media_member": "ppt/media/image5.png",
       "original_file": "set2-q3.png",
@@ -108,6 +104,7 @@
       "set": 2,
       "question": 3,
       "slide_id": "notes-t2-q3",
+      "source_id": "tutorial3",
       "source_slide": 3,
       "media_member": "ppt/media/image5.png",
       "original_file": "set2-q3.png",
@@ -145,6 +142,7 @@
       "set": 2,
       "question": 4,
       "slide_id": "notes-t2-q4",
+      "source_id": "tutorial3",
       "source_slide": 8,
       "media_member": "ppt/media/image15.png",
       "original_file": "set2-q4.png",
@@ -176,6 +174,7 @@
       "set": 2,
       "question": 4,
       "slide_id": "notes-t2-q4",
+      "source_id": "tutorial3",
       "source_slide": 8,
       "media_member": "ppt/media/image15.png",
       "original_file": "set2-q4.png",
@@ -203,128 +202,68 @@
       "sha256": "c934aa31c60f80b9aa666164d33edf5ff0f0c94f711dd425e5b0b2ffad2a33e6"
     },
     {
-      "file": "set2-q5-left.png",
+      "file": "set2-q8-left.png",
       "set": 2,
-      "question": 5,
-      "slide_id": "notes-t2-q5",
-      "source_slide": 13,
-      "media_member": "ppt/media/image25.png",
-      "original_file": "set2-q5.png",
-      "source_components_px": [
-        [
-          0,
-          0,
-          476,
-          368
-        ]
-      ],
-      "dimensions_px": [
-        476,
-        368
-      ],
-      "dimensions_css": [
-        530,
-        409.747899
-      ],
-      "position_css": [
-        98,
-        132
-      ],
-      "alt": "Lecture notes on Poisson process assumptions: random occurrence in time or space, independence between intervals, rate nu, event probability nu times delta t in a short interval, and negligible probability of multiple events in an infinitesimal interval.",
-      "sha256": "ddd065bfdf0e700d45fa97cf3e4fce2a9a3138e6fb685c64b64147e183276de4"
-    },
-    {
-      "file": "set2-q5-right.png",
-      "set": 2,
-      "question": 5,
-      "slide_id": "notes-t2-q5",
-      "source_slide": 13,
-      "media_member": "ppt/media/image25.png",
-      "original_file": "set2-q5.png",
-      "source_components_px": [
-        [
-          0,
-          368,
-          476,
-          730
-        ]
-      ],
-      "dimensions_px": [
-        476,
-        362
-      ],
-      "dimensions_css": [
-        530,
-        403.067227
-      ],
-      "position_css": [
-        652,
-        132
-      ],
-      "alt": "Lecture notes deriving the Poisson distribution as a limit of binomial probabilities. The result is P(X=x)=(nu t)^x exp(-nu t)/x!, for x=0,1,2,..., with the same interpretation for distance in place of time.",
-      "sha256": "2ae56db2a2aa7050a0a1931e641077c7d29557cce1634959d177956762f68a5a"
-    },
-    {
-      "file": "set2-q6-left.png",
-      "set": 2,
-      "question": 6,
-      "slide_id": "notes-t2-q6",
-      "source_slide": 18,
-      "media_member": "ppt/media/image35.png",
-      "original_file": "set2-q6.png",
+      "question": 8,
+      "slide_id": "notes-t2-q8",
+      "source_id": "tutorial4",
+      "source_slide": 6,
+      "media_member": "ppt/media/image5.png",
+      "original_file": "set2-q8.png",
       "source_components_px": [
         [
           0,
           0,
           500,
-          378
+          373
         ]
       ],
       "dimensions_px": [
         500,
-        378
+        373
       ],
       "dimensions_css": [
         530,
-        400.68
+        395.38
       ],
       "position_css": [
         98,
         132
       ],
-      "alt": "Lecture notes deriving the exponential distribution from the waiting time to the first event in a Poisson process. Zero occurrences during time t is equivalent to the first occurrence time T being greater than t.",
-      "sha256": "041bdf4f52e0fc851f645d107c58b9c2105c4d54e44b3d0a4395f9e4f175a233"
+      "alt": "Lecture notes, section 4.3 Function of Multiple Random Variables and section 4.3.1 Sum or Difference of Normal Random Variables. For normal variables X1 and X2 with correlation rho, a linear combination Y=a1X1+a2X2 is normal with mean mu_Y and standard deviation sigma_Y.",
+      "sha256": "7c139ce88556eb1e86bdbe70d03852baf58fd4057acbf76b84ee0c4bcf52a273"
     },
     {
-      "file": "set2-q6-right.png",
+      "file": "set2-q8-right.png",
       "set": 2,
-      "question": 6,
-      "slide_id": "notes-t2-q6",
-      "source_slide": 18,
-      "media_member": "ppt/media/image35.png",
-      "original_file": "set2-q6.png",
+      "question": 8,
+      "slide_id": "notes-t2-q8",
+      "source_id": "tutorial4",
+      "source_slide": 6,
+      "media_member": "ppt/media/image5.png",
+      "original_file": "set2-q8.png",
       "source_components_px": [
         [
           0,
-          378,
+          373,
           500,
-          712
+          728
         ]
       ],
       "dimensions_px": [
         500,
-        334
+        355
       ],
       "dimensions_css": [
         530,
-        354.04
+        376.3
       ],
       "position_css": [
         652,
         132
       ],
-      "alt": "Lecture notes on the exponential distribution: P(T>t)=exp(-nu t), cumulative distribution F_T(t)=1-exp(-nu t), density f_T(t)=nu exp(-nu t) for t at least zero, and mean return period E(T)=1/nu.",
-      "sha256": "ae2981337e46a7258b6e3e753d971906af6b62ba343271d0365ea981ff632be0"
+      "alt": "Lecture notes deriving the mean and variance of a linear combination of correlated normal variables: E(Y)=a1 mu_X1+a2 mu_X2; Var(Y)=a1 squared sigma_X1 squared+a2 squared sigma_X2 squared+2a1a2 rho sigma_X1 sigma_X2. The notes also give the covariance and correlation definitions and the general double-sum variance expression.",
+      "sha256": "cb73da14e9b77971c82d5f673eb94d03a58e0ca59a9bb44de967efb15fc2a229"
     }
   ]
 }

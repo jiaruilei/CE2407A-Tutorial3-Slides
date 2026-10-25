@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CE2407A Tutorial 3. Tutorial Set 2 Q3, Q4, Q5 and Q6: airport capacity, storm sewers, fuel stations and canal locks.">
+  <meta name="description" content="CE2407A Tutorial 3. Tutorial Set 2 Q3, Q4 and Q8: airport capacity, storm sewers and beam reliability.">
   <title>Tutorial 3 · CE2407A</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="reveal.css">
-  <link rel="stylesheet" href="annotations.css?v=tutorial3-notes-1">
-  <link rel="stylesheet" href="styles.css?v=tutorial3-notes-1">
-  <link rel="stylesheet" href="question-viewer.css?v=tutorial3-notes-1">
+  <link rel="stylesheet" href="annotations.css?v=tutorial3-q8-1">
+  <link rel="stylesheet" href="styles.css?v=tutorial3-q8-1">
+  <link rel="stylesheet" href="question-viewer.css?v=tutorial3-q8-1">
 </head>
 <body>
 <nav class="study-controls" aria-label="Study controls">
@@ -19,8 +19,7 @@
       <a class="menu-home" href="#/slide-1">Tutorial 3</a>
       <div class="question-menu-row"><span>T2 Q3 <small>Air traffic</small></span><a href="#/question-t2-q3" aria-label="T2 Q3 question">Question</a><a href="#/notes-t2-q3" aria-label="T2 Q3 notes">Notes</a><a href="#/slide-2" aria-label="T2 Q3 explore">Explore</a></div>
       <div class="question-menu-row"><span>T2 Q4 <small>Storm sewers</small></span><a href="#/question-t2-q4" aria-label="T2 Q4 question">Question</a><a href="#/notes-t2-q4" aria-label="T2 Q4 notes">Notes</a><a href="#/slide-3" aria-label="T2 Q4 explore">Explore</a></div>
-      <div class="question-menu-row"><span>T2 Q5 <small>Fuel stations</small></span><a href="#/question-t2-q5" aria-label="T2 Q5 question">Question</a><a href="#/notes-t2-q5" aria-label="T2 Q5 notes">Notes</a><a href="#/slide-4" aria-label="T2 Q5 explore">Explore</a></div>
-      <div class="question-menu-row"><span>T2 Q6 <small>Canal lock</small></span><a href="#/question-t2-q6" aria-label="T2 Q6 question">Question</a><a href="#/notes-t2-q6" aria-label="T2 Q6 notes">Notes</a><a href="#/slide-5" aria-label="T2 Q6 explore">Explore</a></div>
+      <div class="question-menu-row"><span>T2 Q8 <small>Beam reliability</small></span><a href="#/question-t2-q8" aria-label="T2 Q8 question">Question</a><a href="#/notes-t2-q8" aria-label="T2 Q8 notes">Notes</a><a href="#/explore-t2-q8" aria-label="T2 Q8 explore">Explore</a></div>
       <a class="menu-home" href="#/whiteboard">Whiteboard</a>
     </nav>
   </div>
@@ -102,60 +101,35 @@
         </div>
       </div>
     </section>
-    <section id="question-t2-q5" class="question-statement" data-question="5" data-tutorial="2" data-exercise-url="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q5" data-menu-slide="question-t2-q5" data-title="T2 Q5 · Question statement" aria-label="Slide 9: Tutorial Set 2 Question 5 statement">
-      <h1 class="slide-heading">Question 5</h1>
-      <img class="question-crop" src="assets/questions/set2-q5.png" width="858" height="490" style="left:98px;top:132px" alt="Tutorial Set 2, Question 5. The service stations along a highway are located according to a Poisson process with an average of 1 service station in 10 miles. Because of a gas shortage, there is a probability of 0.2 that a service station would not have gasoline available. Assume that the availabilities of gasoline at different service stations are statistically independent. (a) What is the probability that there is at most 1 service station in the next 15 miles of highway? (b) What is the probability that none of the next 3 stations have gasoline for sale? (c) A driver on this highway notices that the fuel gauge in his car reads empty; from experience he knows that he can go another 15 miles. What is the probability that he will be stranded on the highway without gasoline? Hint: the Taylor series expansion for e to the x may be useful: e^x = [1 + x/1! + x^2/2! + x^3/3! + ...]." draggable="false">
-
+    <section id="question-t2-q8" class="question-statement" data-question="8" data-tutorial="2" data-exercise-url="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q8" data-title="T2 Q8 · Question statement" aria-label="Slide 9: Tutorial Set 2 Question 8 statement">
+      <h1 class="slide-heading">Question 8</h1>
+      <img class="question-crop" src="assets/questions/set2-q8.png" width="858" height="410" style="left:98px;top:132px;width:858px;height:410px" alt="Tutorial Set 2, Question 8. The cantilever beam shown below is subjected to a random concentrated load P and a random distributed load W. Assume P is normally distributed with mean 5 and standard deviation 1, in kips, and W is normally distributed with mean 1 and standard deviation 0.2, in kips per foot. (a) Determine the mean and variance of the applied bending moment, M = 50W + 10P. Assume that the correlation between W and P is 0.5. (b) The resisting moment of the beam R is Gaussian, with mean 200 and standard deviation 50, in foot-kips. Determine the probability of failure of the beam, P(R &lt; M), assuming that R and M are independent. Diagram: a 10-foot cantilever fixed at the left end, carrying a downward uniformly distributed load W and a downward concentrated load P at the right end, with bending moment M_a at the fixed support." draggable="false">
     </section>
-    <section id="notes-t2-q5" class="question-statement lecture-notes" data-question="5" data-tutorial="2" data-exercise-url="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q5" data-title="T2 Q5 · Lecture notes" aria-label="Slide 10: Tutorial Set 2 Question 5 lecture notes">
-      <h1 class="slide-heading">Question 5 · Lecture notes</h1>
-      <img class="question-crop" src="assets/lecture-notes/set2-q5-left.png" width="530" height="410" style="left:98px;top:132px;width:530px;height:409.747899px" alt="Lecture notes on Poisson process assumptions: random occurrence in time or space, independence between intervals, rate nu, event probability nu times delta t in a short interval, and negligible probability of multiple events in an infinitesimal interval." draggable="false">
-      <img class="question-crop" src="assets/lecture-notes/set2-q5-right.png" width="530" height="403" style="left:652px;top:132px;width:530px;height:403.067227px" alt="Lecture notes deriving the Poisson distribution as a limit of binomial probabilities. The result is P(X=x)=(nu t)^x exp(-nu t)/x!, for x=0,1,2,..., with the same interpretation for distance in place of time." draggable="false">
+    <section id="notes-t2-q8" class="question-statement lecture-notes" data-question="8" data-tutorial="2" data-exercise-url="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q8" data-title="T2 Q8 · Lecture notes" aria-label="Slide 10: Tutorial Set 2 Question 8 lecture notes">
+      <h1 class="slide-heading">Question 8 · Lecture notes</h1>
+      <img class="question-crop" src="assets/lecture-notes/set2-q8-left.png" width="530" height="395" style="left:98px;top:132px;width:530px;height:395.38px" alt="Lecture notes, section 4.3 Function of Multiple Random Variables and section 4.3.1 Sum or Difference of Normal Random Variables. For normal variables X1 and X2 with correlation rho, a linear combination Y=a1X1+a2X2 is normal with mean mu_Y and standard deviation sigma_Y." draggable="false">
+      <img class="question-crop" src="assets/lecture-notes/set2-q8-right.png" width="530" height="376" style="left:652px;top:132px;width:530px;height:376.3px" alt="Lecture notes deriving the mean and variance of a linear combination of correlated normal variables: E(Y)=a1 mu_X1+a2 mu_X2; Var(Y)=a1 squared sigma_X1 squared+a2 squared sigma_X2 squared+2a1a2 rho sigma_X1 sigma_X2. The notes also give the covariance and correlation definitions and the general double-sum variance expression." draggable="false">
     </section>
-    <section id="slide-4" data-question="5" data-tutorial="2" data-exercise-url="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q5" data-title="T2 Q5 · Stations &amp; fuel range" aria-label="Slide 11: Tutorial Set 2 Question 5 interactive">
-      <h1 class="slide-heading">Q5 · Stations &amp; fuel range</h1>
+    <section id="explore-t2-q8" data-question="8" data-tutorial="2" data-exercise-url="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q8" data-title="T2 Q8 · Beam reliability" aria-label="Slide 11: Tutorial Set 2 Question 8 interactive">
+      <h1 class="slide-heading">Q8 · Beam reliability</h1>
       <div class="web-panel">
         <div class="web-toolbar">
-          <span class="web-label">Tutorial Set 2 · Question 5</span>
+          <span class="web-label">Tutorial Set 2 · Question 8</span>
           <button class="expand-web" type="button" aria-expanded="false">Enlarge exercise</button>
           <details class="exercise-options"><summary>More</summary><div class="exercise-menu"><p>Resets this exercise and its chat.</p><button class="reload-web" type="button">Reset exercise</button></div></details>
         </div>
         <div class="web-viewport">
           <div class="web-loading" role="status">Loading question…</div>
-          <iframe title="Tutorial Set 2 Question 5: Stations &amp; fuel range" data-web-src="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q5&amp;embed=1" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <iframe title="Tutorial Set 2 Question 8: Beam reliability" data-web-src="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q8&amp;embed=1" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
     </section>
-    <section id="question-t2-q6" class="question-statement" data-question="6" data-tutorial="2" data-exercise-url="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q6" data-menu-slide="question-t2-q6" data-title="T2 Q6 · Question statement" aria-label="Slide 12: Tutorial Set 2 Question 6 statement">
-      <h1 class="slide-heading">Question 6</h1>
-      <img class="question-crop" src="assets/questions/set2-q6.png" width="858" height="384" style="left:98px;top:132px" alt="Tutorial Set 2, Question 6. The cost for the facilities to release and refill water for a navigation lock in a canal increases with decreasing time required for each cycle of operation. For purposes of design, it has been observed that the time of arrival of boats follows an exponential distribution with a mean inter-arrival time of 0.5 hr. Assume that the navigation lock is to be designed so that 80% of the incoming traffic can pass through the lock without waiting. (a) What should be the design time of each cycle of operation? (b) Suppose that one boat leaves town A every 6 hr, and has to go through the lock to reach its destination. In a 24-hr day, (i) What is the probability that none of the boats have to wait at the lock? (ii) What is the probability that at least 2 of the boats have to wait?" draggable="false">
-
-    </section>
-    <section id="notes-t2-q6" class="question-statement lecture-notes" data-question="6" data-tutorial="2" data-exercise-url="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q6" data-title="T2 Q6 · Lecture notes" aria-label="Slide 13: Tutorial Set 2 Question 6 lecture notes">
-      <h1 class="slide-heading">Question 6 · Lecture notes</h1>
-      <img class="question-crop" src="assets/lecture-notes/set2-q6-left.png" width="530" height="401" style="left:98px;top:132px;width:530px;height:400.68px" alt="Lecture notes deriving the exponential distribution from the waiting time to the first event in a Poisson process. Zero occurrences during time t is equivalent to the first occurrence time T being greater than t." draggable="false">
-      <img class="question-crop" src="assets/lecture-notes/set2-q6-right.png" width="530" height="354" style="left:652px;top:132px;width:530px;height:354.04px" alt="Lecture notes on the exponential distribution: P(T&gt;t)=exp(-nu t), cumulative distribution F_T(t)=1-exp(-nu t), density f_T(t)=nu exp(-nu t) for t at least zero, and mean return period E(T)=1/nu." draggable="false">
-    </section>
-    <section id="slide-5" data-question="6" data-tutorial="2" data-exercise-url="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q6" data-title="T2 Q6 · Lock cycle &amp; waiting" aria-label="Slide 14: Tutorial Set 2 Question 6 interactive">
-      <h1 class="slide-heading">Q6 · Lock cycle &amp; waiting</h1>
-      <div class="web-panel">
-        <div class="web-toolbar">
-          <span class="web-label">Tutorial Set 2 · Question 6</span>
-          <button class="expand-web" type="button" aria-expanded="false">Enlarge exercise</button>
-          <details class="exercise-options"><summary>More</summary><div class="exercise-menu"><p>Resets this exercise and its chat.</p><button class="reload-web" type="button">Reset exercise</button></div></details>
-        </div>
-        <div class="web-viewport">
-          <div class="web-loading" role="status">Loading question…</div>
-          <iframe title="Tutorial Set 2 Question 6: Lock cycle &amp; waiting" data-web-src="https://jiaruilei.github.io/CE2407A_Tutorial2/?question=q6&amp;embed=1" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
-      </div>
-    </section>
-    <section id="whiteboard" data-title="Whiteboard" aria-label="Slide 15: Blank whiteboard"></section>
+    <section id="whiteboard" data-title="Whiteboard" aria-label="Slide 12: Blank whiteboard"></section>
   </div>
 </main>
 <nav class="deck-controls" aria-label="Presentation controls">
   <button id="previous" type="button" aria-label="Previous slide" title="Previous (Left arrow)">‹</button>
-  <span id="counter" aria-live="polite">1 / 15</span>
+  <span id="counter" aria-live="polite">1 / 12</span>
   <button id="next" type="button" aria-label="Next slide" title="Next (Right arrow)">›</button>
   <span class="divider" aria-hidden="true"></span>
   <button id="ink-toggle" type="button" aria-expanded="false" aria-controls="ink-toolbar" title="Annotation tools">Ink</button>
@@ -189,6 +163,6 @@
 </div>
 <div id="notice" role="status" hidden></div>
 <script src="reveal.js"></script>
-<script type="module" src="presentation.js?v=tutorial3-notes-1"></script>
+<script type="module" src="presentation.js?v=tutorial3-q8-1"></script>
 </body>
 </html>
